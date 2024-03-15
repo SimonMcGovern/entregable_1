@@ -1,6 +1,8 @@
 import random
                                                 # Lista de palabras posibles
 words = ["python", "programación", "computadora", "código", "desarrollo","inteligencia"]
+                                                # Lista de letras con acento
+letters_with_accent_mark = ['á', 'é', 'í', 'ó', 'ú']
                                                 # Elegir una palabra al azar
 secret_word = random.choice(words)
                                                 # Número máximo de intentos permitidos
@@ -15,14 +17,18 @@ print(f"Palabra: {word_displayed}")
 for i in range(max_attempts):
                                                 # Pedir al jugador que ingrese una letra
     letter = input("Ingresa una letra: ").lower()
-                                                # Verificar si la letra ya ha sido adivinada
+                                               # Verificar si la letra ya ha sido adivinada
     if letter in guessed_letters:
         print("Ya has intentado con esa letra. Intenta con otra.")
+        continue
+                                                # Verificar que el caracter sea una letra valida
+    if  (not(letter in letters_with_accent_mark)) and (letter < 'a' or letter > 'z'):
+        print("El caracter ingresado no es una letra. Intente nuevamente")
         continue
                                                 # Agregar la letra a la lista de letras adivinadas
                                                 #Nota: Por cada funcionalidad agregada se debe realizar al menos un commit que identifique el cambio.
     guessed_letters.append(letter)
-# Verificar si la letra está en la palabra secreta
+                                                # Verificar si la letra está en la palabra secreta
     if letter in secret_word:
         print("¡Bien hecho! La letra está en la palabra.")
     else:
