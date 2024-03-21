@@ -2,7 +2,7 @@ import random
                                                 # Lista de palabras posibles
 words = ["python", "programación", "computadora", "código", "desarrollo","inteligencia"]
                                                 # Lista de letras con acento
-letters_with_accent_mark = ['á', 'é', 'í', 'ó', 'ú']
+letters_with_accent_mark = ('á', 'é', 'í', 'ó', 'ú')
                                                 # Elegir una palabra al azar
 secret_word = random.choice(words)
                                                 # Número máximo de intentos permitidos
