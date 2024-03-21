@@ -26,6 +26,10 @@ while max_fails > fails_counter:
     if  (not(letter in letters_with_accent_mark)) and (letter < 'a' or letter > 'z'):
         print("El caracter ingresado no es una letra. Intente nuevamente")
         continue
+
+    if len(letter) > 1:
+        print("Por favor ingrese una letra sola.")
+        continue
                                                 # Agregar la letra a la lista de letras adivinadas
                                                 #Nota: Por cada funcionalidad agregada se debe realizar al menos un commit que identifique el cambio.
     guessed_letters.append(letter)
