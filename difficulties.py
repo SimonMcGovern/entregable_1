@@ -34,7 +34,7 @@ def easy_mode(secret_word):
     print("Estoy pensando en una palabra. ¿Puedes adivinar cuál es?")
     word_displayed = "_" * len(secret_word)
 
-    print(display_word(secret_word, guessed_letters))
+    print(f"Palabra: {display_word(secret_word, guessed_letters)}")
                                           # Mostrarla palabra parcialmente adivinada
     while max_fails > fails_counter:
                                                 # Pedir al jugador que ingrese una letra
@@ -73,7 +73,9 @@ def normal_mode(secret_word):
     print("Estoy pensando en una palabra. ¿Puedes adivinar cuál es?")
     word_displayed = "_" * len(secret_word)
 
-    print(display_word(secret_word, guessed_letters))
+    word_displayed = word_displayed[:0] + secret_word[0] + word_displayed[1:]
+    word_displayed = word_displayed[:-1] + secret_word[-1]
+    print(f"Palabra: {word_displayed}")
 
     while max_fails > fails_counter:
                                                 # Pedir al jugador que ingrese una letra
