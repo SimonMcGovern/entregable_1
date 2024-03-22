@@ -143,5 +143,5 @@ def hard_mode(secret_word):
 
 if __name__ == "__main__":
     easy_mode("murcielago")
-    normal_mode("programación")
+    normal_mode("programando")
     hard_mode("grabación")
